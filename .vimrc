@@ -33,10 +33,9 @@ set autowrite
 set showmatch
 set lines=30 columns=120
 set termguicolors
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
-Plugin 'Valloric/YouCompleteMe'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'Valloric/YouCompleteMe'
+call plug#end()
 filetype plugin indent on
 let g:ycm_confirm_extra_conf=0
 let g:ycm_cache_omnifunc=0
