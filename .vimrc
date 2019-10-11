@@ -4,6 +4,7 @@ set nocompatible
 set nobackup
 set noswapfile
 set novisualbell
+set noerrorbells
 set number
 set completeopt-=preview
 set completeopt=longest,menu
@@ -34,6 +35,7 @@ set showmatch
 set autochdir
 set lines=30 columns=120
 set termguicolors
+noremap <C-S> <ESC>:w<CR>
 noremap <F9> <ESC>:vsplit<CR>
 noremap <F10> <ESC>:confirm close<CR>
 tnoremap <F11> <C-W>N
