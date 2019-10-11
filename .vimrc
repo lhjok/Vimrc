@@ -31,8 +31,13 @@ set incsearch
 set hlsearch
 set autowrite
 set showmatch
+set autochdir
 set lines=30 columns=120
 set termguicolors
+map <F9> <ESC>:vsplit<CR>
+map <F10> <ESC>:confirm close<CR>
+map <F11> <ESC>:term ++curwin<CR>
+map <F12> <ESC>:vsplit<CR>:term ++curwin<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 call plug#end()
@@ -92,10 +97,11 @@ hi PmenuThumb guifg=NONE guibg=#cacaca guisp=NONE gui=NONE ctermfg=NONE ctermbg=
 
 hi Comment guifg=#888888 guibg=NONE guisp=NONE gui=NONE ctermfg=249 ctermbg=NONE cterm=NONE
 
-hi StatusLine guifg=#eeeeee guibg=#777777 guisp=NONE gui=NONE ctermfg=255 ctermbg=244 cterm=NONE
-hi StatusLineNC guifg=#c6c6c6 guibg=#666666 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 cterm=NONE
-hi StatusLineTerm guifg=#eeeeee  guibg=#777777 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 cterm=NONE
-hi StatusLineTermNC guifg=#c6c6c6 guibg=#666666 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 term=NONE
+hi StatusLine guifg=#eeeeee guibg=#666666 guisp=NONE gui=NONE ctermfg=255 ctermbg=244 cterm=NONE
+hi StatusLineNC guifg=#c6c6c6 guibg=#777777 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 cterm=NONE
+hi StatusLineTerm guifg=#eeeeee  guibg=#666666 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 cterm=NONE
+hi StatusLineTermNC guifg=#c6c6c6 guibg=#777777 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 term=NONE
+hi VertSplit guifg=#c6c6c6 guibg=#666666 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 term=NONE
 
 hi SignColumn guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=240 ctermbg=254 cterm=NONE
 hi Error guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
