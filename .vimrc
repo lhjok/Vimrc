@@ -34,10 +34,9 @@ set showmatch
 set autochdir
 set lines=30 columns=120
 set termguicolors
-map <F9> <ESC>:vsplit<CR>
-map <F10> <ESC>:confirm close<CR>
-map <F11> <ESC>:term ++curwin<CR>
-map <F12> <ESC>:vsplit<CR>:term ++curwin<CR>
+noremap <F9> <ESC>:vsplit<CR>
+noremap <F10> <ESC>:confirm close<CR>
+noremap <F12> <ESC>:rightbelow vert term<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 call plug#end()
