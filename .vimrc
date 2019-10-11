@@ -36,6 +36,7 @@ set lines=30 columns=120
 set termguicolors
 noremap <F9> <ESC>:vsplit<CR>
 noremap <F10> <ESC>:confirm close<CR>
+tnoremap <F11> <C-W>N
 noremap <F12> <ESC>:rightbelow vert term<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
