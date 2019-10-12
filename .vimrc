@@ -6,6 +6,8 @@ set noswapfile
 set novisualbell
 set noerrorbells
 set number
+set autoread
+set mouse=a
 set completeopt-=preview
 set completeopt=longest,menu
 set guioptions-=r
