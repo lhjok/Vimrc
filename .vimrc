@@ -41,6 +41,7 @@ noremap <C-S> <ESC>:w<CR>
 noremap <F9> <ESC>:vsplit<CR>
 noremap <F10> <ESC>:confirm close<CR>
 tnoremap <F11> <C-W>N
+tnoremap <ScrollWheelUp> <C-W>N
 noremap <F12> <ESC>:rightbelow vert term<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
