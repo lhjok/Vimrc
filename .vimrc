@@ -38,6 +38,10 @@ set autochdir
 set lines=30 columns=120
 set termguicolors
 noremap <C-S> <ESC>:w<CR>
+vnoremap <C-C> "+y
+vnoremap <C-X> "+x
+nnoremap <C-V> "+gP
+vnoremap <C-V> "+gP
 nnoremap <F1> <C-W>w
 tnoremap <F1> <C-W>w
 vnoremap <F1> <C-W>w
@@ -47,9 +51,12 @@ noremap <F3> <C-W><
 noremap <F4> <C-W>>
 tnoremap <F3> <C-W><
 tnoremap <F4> <C-W>>
-noremap <F9> <ESC>:vsplit<CR>
-noremap <F10> <ESC>:confirm close<CR>
-tnoremap <F11> <C-W>N
+noremap <F8> <C-W>n
+noremap <F9> <C-W>v
+noremap <F10> <C-W>c
+tnoremap <F10> <ESC>:exit<CR>
+noremap <F11> <ESC>:term ++curwin<CR>
+tnoremap <PageUp> <C-W>N
 tnoremap <ScrollWheelUp> <C-W>N
 noremap <F12> <ESC>:rightbelow vert term<CR>
 call plug#begin('~/.vim/plugged')
