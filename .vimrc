@@ -73,7 +73,7 @@ let g:ycm_min_num_of_chars_for_completion=2
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_error_symbol='>>'
-let g:ycm_warning_symbol='>*'
+let g:ycm_warning_symbol='>>'
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 colorscheme default
 inoremap ( ()<Esc>i
@@ -128,6 +128,7 @@ hi VertSplit guifg=#c6c6c6 guibg=#666666 guisp=NONE gui=NONE ctermfg=251 ctermbg
 
 hi SignColumn guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=240 ctermbg=254 cterm=NONE
 hi Error guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
+hi Todo guifg=#ff5f00 guibg=NONE guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
 hi ErrorMsg guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE
 hi WarningMsg guifg=#ff5f00 guibg=NONE guisp=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 hi Exception guifg=#d70000 guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
