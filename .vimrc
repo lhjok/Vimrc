@@ -38,10 +38,12 @@ set autochdir
 set lines=30 columns=120
 set termguicolors
 noremap <C-S> <ESC>:w<CR>
+nnoremap <C-A> ggVG
 vnoremap <C-C> "+y
 vnoremap <C-X> "+x
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
+inoremap <C-V> <ESC>"+gP
 nnoremap <F1> <C-W>w
 tnoremap <F1> <C-W>w
 vnoremap <F1> <C-W>w
