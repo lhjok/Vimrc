@@ -8,6 +8,8 @@ set noerrorbells
 set number
 set autoread
 set mouse=a
+set lines=30
+set columns=120
 set completeopt-=preview
 set completeopt=longest,menu
 set guioptions-=r
@@ -35,8 +37,8 @@ set hlsearch
 set autowrite
 set showmatch
 set autochdir
-set lines=30 columns=120
 set termguicolors
+
 noremap <C-S> <ESC>:w<CR>
 nnoremap <C-A> ggVG
 vnoremap <C-C> "+y
@@ -61,10 +63,14 @@ noremap <F11> <ESC>:term ++curwin<CR>
 tnoremap <PageUp> <C-W>N
 tnoremap <ScrollWheelUp> <C-W>N
 noremap <F12> <ESC>:rightbelow vert term<CR>
+
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
+Plug 'cespare/vim-toml'
 call plug#end()
+colorscheme default
 filetype plugin indent on
+
 let g:ycm_confirm_extra_conf=0
 let g:ycm_cache_omnifunc=0
 let g:ycm_use_ultisnips_completer=0
@@ -75,7 +81,7 @@ let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_error_symbol='>>'
 let g:ycm_warning_symbol='>>'
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-colorscheme default
+
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap { {<CR>}<Esc>O
@@ -85,6 +91,7 @@ inoremap ] <c-r>=ClosePair(']')<CR>
 inoremap } <c-r>=CloseBracket()<CR>
 inoremap " <c-r>=QuoteDelim('"')<CR>
 inoremap ' <c-r>=QuoteDelim("'")<CR>
+
 function ClosePair(char)
     if getline('.')[col('.') - 1] == a:char
         return "\<Right>"
