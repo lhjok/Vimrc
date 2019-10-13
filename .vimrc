@@ -7,6 +7,7 @@ set novisualbell
 set noerrorbells
 set number
 set autoread
+set hidden
 set mouse=a
 set lines=30
 set columns=120
@@ -66,11 +67,18 @@ noremap <F12> <ESC>:rightbelow vert term<CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'cespare/vim-toml'
 call plug#end()
 filetype plugin indent on
 colorscheme default
 
+let g:racer_cmd="/home/lhjok/.cargo/bin/racer"
+let g:racer_experimental_completer=1
+let g:racer_insert_paren=1
+let g:rustfmt_autosave=1
 let g:ycm_confirm_extra_conf=0
 let g:ycm_cache_omnifunc=0
 let g:ycm_use_ultisnips_completer=0
@@ -81,6 +89,11 @@ let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_error_symbol='>>'
 let g:ycm_warning_symbol='>>'
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
@@ -134,8 +147,8 @@ hi StatusLineTermNC guifg=#c6c6c6 guibg=#777777 guisp=NONE gui=NONE ctermfg=251 
 hi VertSplit guifg=#c6c6c6 guibg=#666666 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 term=NONE
 
 hi SignColumn guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=240 ctermbg=254 cterm=NONE
-hi Error guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
-hi Todo guifg=#ff5f00 guibg=NONE guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
+hi Error guifg=#ff0000 guibg=NONE guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
+hi Todo guifg=#0000ff guibg=NONE guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
 hi ErrorMsg guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE
 hi WarningMsg guifg=#ff5f00 guibg=NONE guisp=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 hi Exception guifg=#d70000 guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
