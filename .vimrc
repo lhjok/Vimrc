@@ -75,6 +75,7 @@ call plug#end()
 filetype plugin indent on
 colorscheme default
 
+let g:go_fmt_fail_silently=1
 let g:racer_cmd="/home/lhjok/.cargo/bin/racer"
 let g:racer_experimental_completer=1
 let g:racer_insert_paren=1
