@@ -68,8 +68,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 Plug 'cespare/vim-toml'
 call plug#end()
-colorscheme default
 filetype plugin indent on
+colorscheme default
 
 let g:ycm_confirm_extra_conf=0
 let g:ycm_cache_omnifunc=0
