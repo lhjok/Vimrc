@@ -39,7 +39,7 @@ call plug#end()
 sudo apt install build-essential cmake python-dev
 ```
 
-- 开始编译YCM插件。
+- 开始编译YCM插件(GO模块需要翻墙)。
 
 ```sh
 cd ~/.vim/plugged/YouCompleteMe

@@ -68,17 +68,11 @@ noremap <F12> <ESC>:rightbelow vert term<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
-Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'cespare/vim-toml'
 call plug#end()
 filetype plugin indent on
 colorscheme default
 
-let g:go_fmt_fail_silently=1
-let g:racer_cmd="/home/lhjok/.cargo/bin/racer"
-let g:racer_experimental_completer=1
-let g:racer_insert_paren=1
 let g:rustfmt_autosave=1
 let g:ycm_confirm_extra_conf=0
 let g:ycm_cache_omnifunc=0
@@ -90,11 +84,6 @@ let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_error_symbol='>>'
 let g:ycm_warning_symbol='>>'
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
-au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
