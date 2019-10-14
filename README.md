@@ -43,7 +43,7 @@ sudo apt install build-essential cmake python-dev
 
 ```sh
 cd ~/.vim/plugged/YouCompleteMe
-./install.py --clang-completer --clangd-completer --ts-completer --rust-completer
+./install.py --clang-completer --clangd-completer --go-completer --ts-completer --rust-completer
 ```
 
 #### 完成Vim编辑环境。
