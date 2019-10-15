@@ -21,13 +21,12 @@ set smartindent
 set shortmess=atI
 set tabstop=4
 set shiftwidth=4
-set linespace=-3
 set nowrap
 set showmatch
 set expandtab
 set history=1000
 set guioptions-=T
-set guifont=Consolas\ 13
+set guifont=Monospace\ 13
 set guifontwide=Microsoft\ YaHei\ 13
 set fileencodings=utf-8,gb18030
 set ignorecase smartcase
