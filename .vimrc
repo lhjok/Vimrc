@@ -26,7 +26,7 @@ set showmatch
 set expandtab
 set history=1000
 set guioptions-=T
-set guifont=Monospace\ 13
+set guifont=DejaVu\ Sans\ Mono\ Book\ 13
 set guifontwide=Microsoft\ YaHei\ 13
 set fileencodings=utf-8,gb18030
 set ignorecase smartcase

@@ -4,8 +4,8 @@
 
 - 安装Vim编辑器。
 - 安装Vim插件管理器。
-- 配置好.vimrc文件。
-- 安装.vimrc文件的插件。
+- 配置好`.vimrc`文件。
+- 安装`.vimrc`文件的插件。
 - 编译YCM自动补全插件。
 - 完成Vim编辑环境。
 
@@ -39,11 +39,19 @@ call plug#end()
 sudo apt install build-essential cmake python-dev
 ```
 
-- 开始编译YCM插件(GO模块需要翻墙)。
+- 开始编译YCM插件`GO模块需要翻墙`。
 
 ```sh
 cd ~/.vim/plugged/YouCompleteMe
 ./install.py --clang-completer --clangd-completer --go-completer --ts-completer --rust-completer
+```
+
+#### 配置美观编程字体【guifont】二选一。
+
+```vim
+set guifont=DejaVu\ Sans\ Mono\ Book\ 13
+set guifont=Monospace\ 13
+set guifontwide=Microsoft\ YaHei\ 13
 ```
 
 #### 完成Vim编辑环境。
