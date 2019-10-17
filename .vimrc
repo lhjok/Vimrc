@@ -45,7 +45,7 @@ vnoremap <C-C> "+y
 vnoremap <C-X> "+x
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
-inoremap <C-V> <ESC>"+gP
+inoremap <C-V> <ESC>]p
 nnoremap <F1> <C-W>w
 tnoremap <F1> <C-W>w
 vnoremap <F1> <C-W>w
