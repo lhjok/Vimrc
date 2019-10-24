@@ -39,8 +39,12 @@ set showmatch
 set autochdir
 set termguicolors
 
-noremap <C-S> <ESC>:w<CR>
+nnoremap <C-S> :w<CR>
+vnoremap <C-S> <ESC>:w<CR>
+inoremap <C-S> <ESC>:w<CR>
 nnoremap <C-A> ggVG
+vnoremap <C-A> ggVG
+inoremap <C-A> <ESC>ggVG
 vnoremap <C-C> "+y
 vnoremap <C-X> "+x
 nnoremap <C-V> "+gP
@@ -49,20 +53,28 @@ inoremap <C-V> <ESC>]p
 nnoremap <F1> <C-W>w
 tnoremap <F1> <C-W>w
 vnoremap <F1> <C-W>w
-nnoremap <F2> <ESC>:bn<CR>
+nnoremap <F2> :bn<CR>
 vnoremap <F2> <ESC>:bn<CR>
-noremap <F3> <C-W><
-noremap <F4> <C-W>>
+nnoremap <F3> <C-W><
+nnoremap <F4> <C-W>>
 tnoremap <F3> <C-W><
 tnoremap <F4> <C-W>>
-noremap <F8> <C-W>n
-noremap <F9> <C-W>v
-noremap <F10> <C-W>c
-tnoremap <F10> <ESC>:exit<CR>
-noremap <F11> <ESC>:term ++curwin<CR>
+nnoremap <F5> :promptrepl<CR>
+vnoremap <F5> <ESC>:promptrepl<CR>
+inoremap <F5> <ESC>:promptrepl<CR>
+nnoremap <F6> :noh<CR>
+vnoremap <F6> <ESC>:noh<CR>
+inoremap <F6> <ESC>:noh<CR>
+nnoremap <F8> <C-W>n
+nnoremap <F9> <C-W>v
+nnoremap <F10> <C-W>c
+tnoremap <F10> exit<CR>
+nnoremap <F11> :term ++curwin<CR>
 tnoremap <PageUp> <C-W>N
 tnoremap <ScrollWheelUp> <C-W>N
-noremap <F12> <ESC>:rightbelow vert term<CR>
+nnoremap <F12> :rightbelow vert term<CR>
+vnoremap <F12> <ESC>:rightbelow vert term<CR>
+inoremap <F12> <ESC>:rightbelow vert term<CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
