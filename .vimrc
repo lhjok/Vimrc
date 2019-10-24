@@ -67,6 +67,9 @@ inoremap <F5> <ESC>:promptrepl<CR>
 nnoremap <F6> :noh<CR>
 vnoremap <F6> <ESC>:noh<CR>
 inoremap <F6> <ESC>:noh<CR>
+nnoremap <F7> :bwipe<CR>
+vnoremap <F7> <ESC>:bwipe<CR>
+inoremap <F7> <ESC>:bwipe<CR>
 nnoremap <F8> <C-W>n
 vnoremap <F8> <C-W>n
 nnoremap <F9> <C-W>v
