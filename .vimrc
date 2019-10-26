@@ -50,11 +50,17 @@ vnoremap <C-X> "+x
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
 inoremap <C-V> <ESC>]p
+nnoremap <C-O> :browse confirm e<CR>
+vnoremap <C-O> <ESC>:browse confirm e<CR>
+inoremap <C-O> <ESC>:browse confirm e<CR>
+nnoremap <TAB> gg=G
 nnoremap <F1> <C-W>w
 tnoremap <F1> <C-W>w
 vnoremap <F1> <C-W>w
 nnoremap <F2> :bn<CR>
 vnoremap <F2> <ESC>:bn<CR>
+inoremap <F2> <ESC>:bn<CR>
+tnoremap <F2> <C-W>N
 nnoremap <F3> <C-W><
 vnoremap <F3> <C-W><
 tnoremap <F3> <C-W><
@@ -79,6 +85,7 @@ vnoremap <F10> <C-W>c
 tnoremap <F10> exit<CR>
 nnoremap <F11> :term ++curwin<CR>
 vnoremap <F11> <ESC>:term ++curwin<CR>
+inoremap <F11> <ESC>:term ++curwin<CR>
 tnoremap <PageUp> <C-W>N
 tnoremap <ScrollWheelUp> <C-W>N
 nnoremap <F12> :rightbelow vert term<CR>
