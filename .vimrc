@@ -24,7 +24,7 @@ set shiftwidth=4
 set nowrap
 set showmatch
 set expandtab
-set history=1000
+set history=500
 set guioptions-=T
 set guifont=DejaVu\ Sans\ Mono\ Book\ 13
 set guifontwide=Microsoft\ YaHei\ 13
@@ -49,7 +49,7 @@ vnoremap <C-C> "+y
 vnoremap <C-X> "+x
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
-inoremap <C-V> <ESC>]p
+inoremap <C-V> <ESC>"+]p
 nnoremap <C-O> :browse confirm e<CR>
 vnoremap <C-O> <ESC>:browse confirm e<CR>
 inoremap <C-O> <ESC>:browse confirm e<CR>
@@ -76,8 +76,8 @@ inoremap <F6> <ESC>:noh<CR>
 nnoremap <F7> :bwipe<CR>
 vnoremap <F7> <ESC>:bwipe<CR>
 inoremap <F7> <ESC>:bwipe<CR>
-nnoremap <F8> <C-W>n
-vnoremap <F8> <C-W>n
+nnoremap <F8> <C-W>s
+vnoremap <F8> <C-W>s
 nnoremap <F9> <C-W>v
 vnoremap <F9> <C-W>v
 nnoremap <F10> <C-W>c
@@ -100,7 +100,7 @@ call plug#end()
 filetype plugin indent on
 colorscheme default
 
-let g:rustfmt_autosave=1
+let g:rustfmt_autosave=0
 let g:ycm_confirm_extra_conf=0
 let g:ycm_cache_omnifunc=0
 let g:ycm_use_ultisnips_completer=0
