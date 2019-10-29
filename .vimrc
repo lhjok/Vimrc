@@ -53,6 +53,10 @@ inoremap <C-V> <ESC>"+]p
 nnoremap <C-O> :browse confirm e<CR>
 vnoremap <C-O> <ESC>:browse confirm e<CR>
 inoremap <C-O> <ESC>:browse confirm e<CR>
+tnoremap <ESC> <C-W>N
+tnoremap <C-Y> <C-W>N
+tnoremap <C-B> <C-W>N
+tnoremap <C-U> <C-W>N
 nnoremap <TAB> gg=G
 nnoremap <F1> <C-W>w
 tnoremap <F1> <C-W>w
@@ -78,8 +82,10 @@ vnoremap <F7> <ESC>:bwipe<CR>
 inoremap <F7> <ESC>:bwipe<CR>
 nnoremap <F8> <C-W>s
 vnoremap <F8> <C-W>s
+tnoremap <F8> <C-W>N
 nnoremap <F9> <C-W>v
 vnoremap <F9> <C-W>v
+tnoremap <F9> <C-W>N
 nnoremap <F10> <C-W>c
 vnoremap <F10> <C-W>c
 tnoremap <F10> exit<CR>
