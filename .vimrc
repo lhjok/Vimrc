@@ -49,15 +49,15 @@ vnoremap <C-C> "+y
 vnoremap <C-X> "+x
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
-inoremap <C-V> <ESC>"+]p
+inoremap <C-V> <C-R><C-O>+
 nnoremap <C-O> :browse confirm e<CR>
 vnoremap <C-O> <ESC>:browse confirm e<CR>
-inoremap <C-O> <ESC>:browse confirm e<CR>
 tnoremap <ESC> <C-W>N
 tnoremap <C-Y> <C-W>N
 tnoremap <C-B> <C-W>N
 tnoremap <C-U> <C-W>N
-nnoremap <TAB> gg=G
+nnoremap <TAB> =G
+nnoremap <C-TAB> :Autoformat<CR>
 nnoremap <F1> <C-W>w
 tnoremap <F1> <C-W>w
 vnoremap <F1> <C-W>w
@@ -102,6 +102,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Chiel92/vim-autoformat'
 call plug#end()
 filetype plugin indent on
 colorscheme default
@@ -117,44 +119,6 @@ let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_error_symbol='>>'
 let g:ycm_warning_symbol='>>'
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap { {<CR>}<Esc>O
-autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
-inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap ] <c-r>=ClosePair(']')<CR>
-inoremap } <c-r>=CloseBracket()<CR>
-inoremap " <c-r>=QuoteDelim('"')<CR>
-inoremap ' <c-r>=QuoteDelim("'")<CR>
-
-function ClosePair(char)
-    if getline('.')[col('.') - 1] == a:char
-        return "\<Right>"
-    else
-        return a:char
-    endif
-endf
-
-function CloseBracket()
-    if match(getline(line('.') + 1), '\s*}') < 0
-        return "\<CR>}"
-    else
-        return "\<Esc>j0f}a"
-    endif
-endf
-
-function QuoteDelim(char)
-    let line = getline('.')
-    let col = col('.')
-    if line[col - 2] == "\\"
-        return a:char
-    elseif line[col - 1] == a:char
-        return "\<Right>"
-    else
-        return a:char.a:char."\<Esc>i"
-    endif
-endf
 
 hi Pmenu guifg=#232323 guibg=#f0f0f0 guisp=NONE gui=NONE ctermfg=232 ctermbg=230 cterm=NONE
 hi PmenuSbar guifg=NONE guibg=#e0e0e0 guisp=NONE gui=NONE ctermfg=NONE ctermbg=255 cterm=NONE
