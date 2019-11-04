@@ -9,8 +9,6 @@ set number
 set autoread
 set hidden
 set mouse=a
-set lines=30
-set columns=120
 set completeopt-=preview
 set completeopt=longest,menu
 set guioptions-=r
@@ -133,9 +131,9 @@ hi StatusLineTerm guifg=#eeeeee  guibg=#666666 guisp=NONE gui=NONE ctermfg=251 c
 hi StatusLineTermNC guifg=#c6c6c6 guibg=#777777 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 term=NONE
 hi VertSplit guifg=#c6c6c6 guibg=#666666 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 term=NONE
 
-hi SignColumn guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=240 ctermbg=254 cterm=NONE
-hi Error guifg=#ff0000 guibg=NONE guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
-hi Todo guifg=#0000ff guibg=NONE guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
+hi SignColumn guifg=NONE guibg=#ffffff guisp=NONE gui=NONE ctermfg=240 ctermbg=254 cterm=NONE
+hi Error guifg=#ff0000 guibg=#ffffff guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
+hi Todo guifg=#0000ff guibg=#ffffff guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
 hi ErrorMsg guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE
 hi WarningMsg guifg=#ff5f00 guibg=NONE guisp=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 hi Exception guifg=#d70000 guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
