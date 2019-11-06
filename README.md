@@ -11,10 +11,20 @@
 
 ### 安装Vim插件管理器。
 
+#### Vim
+
 ```sh
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
+
+#### Neovim
+
+```sh
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
 ### 配置插件管理器。
 
 #### begin与end之间放插件。
