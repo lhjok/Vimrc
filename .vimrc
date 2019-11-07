@@ -42,7 +42,6 @@ nnoremap <C-S> :w<CR>
 vnoremap <C-S> <ESC>:w<CR>
 inoremap <C-S> <ESC>:w<CR>
 nnoremap <C-A> ggVG
-vnoremap <C-A> ggVG
 inoremap <C-A> <ESC>ggVG
 vnoremap <C-C> "+y
 vnoremap <C-X> "+x
