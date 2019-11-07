@@ -11,6 +11,7 @@ set hidden
 set mouse=a
 set completeopt-=preview
 set completeopt=longest,menu
+set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 set guioptions-=b
@@ -22,13 +23,12 @@ set shiftwidth=4
 set nowrap
 set showmatch
 set expandtab
-set history=500
-set guioptions-=T
+set history=1000
 set guifont=DejaVu\ Sans\ Mono\ Book\ 13
 set guifontwide=Microsoft\ YaHei\ 13
-set fileencodings=utf-8,gb18030
+set fileencodings=utf-8,gb2312,gbk,gb18030,cp936
 set ignorecase smartcase
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 set nowrapscan
 set incsearch
 set hlsearch
@@ -60,9 +60,9 @@ nnoremap <C-TAB> :Autoformat<CR>
 nnoremap <F1> <C-W>w
 tnoremap <F1> <C-W>w
 vnoremap <F1> <C-W>w
-nnoremap <F2> :bn<CR>
-vnoremap <F2> <ESC>:bn<CR>
-inoremap <F2> <ESC>:bn<CR>
+nnoremap <F2> :bnext<CR>
+vnoremap <F2> <ESC>:bnext<CR>
+inoremap <F2> <ESC>:bnext<CR>
 tnoremap <F2> <C-W>N
 nnoremap <F3> <C-W><
 vnoremap <F3> <C-W><
@@ -87,7 +87,7 @@ vnoremap <F9> <C-W>v
 tnoremap <F9> <C-W>N
 nnoremap <F10> <C-W>c
 vnoremap <F10> <C-W>c
-tnoremap <F10> exit<CR>
+tnoremap <F10> <C-D>
 nnoremap <F11> :term ++curwin<CR>
 vnoremap <F11> <ESC>:term ++curwin<CR>
 inoremap <F11> <ESC>:term ++curwin<CR>

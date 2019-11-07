@@ -2,14 +2,14 @@
 
 ### 安装步骤：
 
-- 安装Vim编辑器。
-- 安装Vim插件管理器。
-- 配置好`.vimrc`文件。
-- 安装`.vimrc`文件的插件。
+- 安装Vim或Neovim编辑器。
+- 安装Vim或Neovim插件管理器。
+- 配置好`.vimrc`or`init.vim`文件。
+- 安装`.vimrc`or`init.vim`文件的插件。
 - 编译YCM自动补全插件。
-- 完成Vim编辑环境。
+- 完成Vim和Neovim编辑环境。
 
-### 安装Vim插件管理器。
+### 安装Vim或Neovim插件管理器。
 
 #### Vim
 
@@ -19,6 +19,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 
 #### Neovim
+
+```sh
+npm install -g neovim
+```
 
 ```sh
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -35,7 +39,7 @@ Plug 'Valloric/YouCompleteMe'
 call plug#end()
 ```
 
-#### 安装.vimrc的插件。
+#### 执行插件安装。
 
 ```vim
 :PlugInstall
@@ -64,4 +68,4 @@ set guifont=Monospace\ 13
 set guifontwide=Microsoft\ YaHei\ 13
 ```
 
-#### 完成Vim编辑环境。
+#### 完成Vim和Neovim编辑环境。

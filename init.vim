@@ -1,17 +1,13 @@
-syntax on
-filetype on
-set nocompatible
 set nobackup
 set noswapfile
 set novisualbell
 set noerrorbells
+set laststatus=1
 set number
-set autoread
 set hidden
 set mouse=a
 set completeopt-=preview
 set completeopt=longest,menu
-set autoindent
 set smartindent
 set shortmess=atI
 set tabstop=4
@@ -19,15 +15,12 @@ set shiftwidth=4
 set nowrap
 set showmatch
 set expandtab
-set history=500
 set guifont=DejaVu\ Sans\ Mono\ Book\ 13
 set guifontwide=Microsoft\ YaHei\ 13
-set fileencodings=utf-8,gb18030
+set fileencodings=utf-8,gb2312,gbk,gb18030,cp936
 set ignorecase smartcase
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 set nowrapscan
-set incsearch
-set hlsearch
 set autowrite
 set showmatch
 set autochdir
@@ -98,7 +91,6 @@ Plug 'cespare/vim-toml'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Chiel92/vim-autoformat'
 call plug#end()
-filetype plugin indent on
 colorscheme default
 set background=light
 
@@ -113,6 +105,7 @@ let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_error_symbol='>>'
 let g:ycm_warning_symbol='>>'
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:node_host_prog='~/.npm-global/bin/neovim-node-host'
 
 hi Pmenu guifg=#232323 guibg=#f0f0f0 guisp=NONE gui=NONE ctermfg=232 ctermbg=230 cterm=NONE
 hi PmenuSbar guifg=NONE guibg=#e0e0e0 guisp=NONE gui=NONE ctermfg=NONE ctermbg=255 cterm=NONE
