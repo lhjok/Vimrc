@@ -50,6 +50,10 @@ vnoremap <C-V> "+gP
 inoremap <C-V> <C-R><C-O>+
 nnoremap <C-O> :browse confirm e<CR>
 vnoremap <C-O> <ESC>:browse confirm e<CR>
+nnoremap <M-.> :YcmCompleter GoToDefinition<CR>
+inoremap <M-.> <ESC>:YcmCompleter GoToDefinition<CR>
+nnoremap <M-/> :YcmCompleter GoToDeclaration<CR>
+inoremap <M-/> <ESC>:YcmCompleter GoToDeclaration<CR>
 tnoremap <ESC> <C-W>N
 tnoremap <C-Y> <C-W>N
 tnoremap <C-B> <C-W>N
@@ -63,6 +67,10 @@ nnoremap <F2> :bnext<CR>
 vnoremap <F2> <ESC>:bnext<CR>
 inoremap <F2> <ESC>:bnext<CR>
 tnoremap <F2> <C-W>N
+nnoremap <C-]> :bprev<CR>
+vnoremap <C-]> <ESC>:bprev<CR>
+inoremap <C-]> <ESC>:bprev<CR>
+tnoremap <C-]> <C-W>N
 nnoremap <F3> <C-W><
 vnoremap <F3> <C-W><
 tnoremap <F3> <C-W><
