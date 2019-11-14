@@ -24,7 +24,6 @@ set nowrapscan
 set autowrite
 set showmatch
 set autochdir
-set t_Co=256
 set termguicolors
 
 nnoremap <C-S> :w<CR>
@@ -37,8 +36,12 @@ vnoremap <C-X> "+x
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
 inoremap <C-V> <C-R><C-O>+
-nnoremap <C-O> :Explore<CR>
-vnoremap <C-O> <ESC>:Explore<CR>
+nnoremap <C-]> :Explore<CR>
+vnoremap <C-]> <ESC>:Explore<CR>
+inoremap <C-]> <ESC>:Explore<CR>
+nnoremap <C-K> :bwipe<CR>
+vnoremap <C-K> <ESC>:bwipe<CR>
+inoremap <C-K> <ESC>:bwipe<CR>
 nnoremap <M-.> :YcmCompleter GoToDefinition<CR>
 inoremap <M-.> <ESC>:YcmCompleter GoToDefinition<CR>
 nnoremap <M-/> :YcmCompleter GoToDeclaration<CR>
@@ -47,8 +50,8 @@ tnoremap <ESC> <C-\><C-N>
 tnoremap <C-Y> <C-\><C-N>
 tnoremap <C-B> <C-\><C-N>
 tnoremap <C-U> <C-\><C-N>
+nnoremap <C-T> :Autoformat<CR>
 nnoremap <TAB> =G
-nnoremap <C-TAB> :Autoformat<CR>
 nnoremap <F1> <C-W>w
 tnoremap <F1> <C-\><C-N>
 vnoremap <F1> <C-W>w
@@ -56,10 +59,10 @@ nnoremap <F2> :bnext<CR>
 vnoremap <F2> <ESC>:bnext<CR>
 inoremap <F2> <ESC>:bnext<CR>
 tnoremap <F2> <C-\><C-N>
-nnoremap <C-]> :bprev<CR>
-vnoremap <C-]> <ESC>:bprev<CR>
-inoremap <C-]> <ESC>:bprev<CR>
-tnoremap <C-]> <C-\><C-N>
+nnoremap <C-P> :bprev<CR>
+vnoremap <C-P> <ESC>:bprev<CR>
+inoremap <C-P> <ESC>:bprev<CR>
+tnoremap <C-P> <C-\><C-N>
 nnoremap <F3> <C-W><
 vnoremap <F3> <C-W><
 tnoremap <F3> <C-\><C-N>
@@ -72,9 +75,9 @@ inoremap <F5> <ESC>:%s/
 nnoremap <F6> :noh<CR>
 vnoremap <F6> <ESC>:noh<CR>
 inoremap <F6> <ESC>:noh<CR>
-nnoremap <F7> :bwipe<CR>
-vnoremap <F7> <ESC>:bwipe<CR>
-inoremap <F7> <ESC>:bwipe<CR>
+nnoremap <F7> :Neomake<CR>
+vnoremap <F7> <ESC>:Neomake<CR>
+inoremap <F7> <ESC>:Neomake<CR>
 nnoremap <F8> <C-W>s
 vnoremap <F8> <C-W>s
 tnoremap <F8> <C-\><C-N>
@@ -97,6 +100,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Chiel92/vim-autoformat'
+Plug 'neomake/neomake'
 call plug#end()
 colorscheme default
 set background=light
@@ -113,6 +117,8 @@ let g:ycm_error_symbol='>>'
 let g:ycm_warning_symbol='>>'
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 let g:node_host_prog='~/.npm-global/bin/neovim-node-host'
+let g:neomake_open_list=2
+let g:neomake_rust_cargo_command=['build', '--release']
 
 hi Pmenu guifg=#232323 guibg=#f0f0f0 guisp=NONE gui=NONE ctermfg=232 ctermbg=230 cterm=NONE
 hi PmenuSbar guifg=NONE guibg=#e0e0e0 guisp=NONE gui=NONE ctermfg=NONE ctermbg=255 cterm=NONE
