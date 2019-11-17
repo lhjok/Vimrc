@@ -1,5 +1,6 @@
 syntax on
 filetype on
+packadd termdebug
 set nocompatible
 set nobackup
 set noswapfile
@@ -48,6 +49,18 @@ vnoremap <C-X> "+x
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
 inoremap <C-V> <C-R><C-O>+
+nnoremap <M-'> :Termdebug 
+vnoremap <M-'> <ESC>:Termdebug 
+inoremap <M-'> <ESC>:Termdebug 
+nnoremap <M-\> :Run<CR>
+vnoremap <M-\> <ESC>:Run<CR>
+inoremap <M-\> <ESC>:Run<CR>
+nnoremap <M-[> :Break<CR>
+vnoremap <M-[> <ESC>:Break<CR>
+inoremap <M-[> <ESC>:Break<CR>
+nnoremap <M-]> :Clear<CR>
+vnoremap <M-]> <ESC>:Clear<CR>
+inoremap <M-]> <ESC>:Clear<CR>
 nnoremap <C-]> :browse confirm e<CR>
 vnoremap <C-]> <ESC>:browse confirm e<CR>
 inoremap <C-]> <ESC>:browse confirm e<CR>
@@ -118,7 +131,10 @@ Plug 'neomake/neomake'
 call plug#end()
 filetype plugin indent on
 colorscheme default
+set background=light
 
+let g:termdebug_wide=135
+let g:termdebug_use_prompt=1
 let g:rustfmt_autosave=0
 let g:ycm_confirm_extra_conf=0
 let g:ycm_cache_omnifunc=0
@@ -150,6 +166,8 @@ hi VertSplit guifg=#c6c6c6 guibg=#666666 guisp=NONE gui=NONE ctermfg=251 ctermbg
 hi SignColumn guifg=NONE guibg=#ffffff guisp=NONE gui=NONE ctermfg=240 ctermbg=254 cterm=NONE
 hi Error guifg=#ff0000 guibg=#ffffff guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
 hi Todo guifg=#0000ff guibg=#ffffff guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
+hi debugPC guifg=NONE guibg=#e4e4e4 guisp=NONE gui=NONE ctermfg=240 ctermbg=254 term=NONE
+hi debugBreakpoint guifg=red guibg=#ffffff guisp=NONE gui=NONE ctermfg=red ctermbg=NONE term=NONE
 hi ErrorMsg guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE
 hi WarningMsg guifg=#ff5f00 guibg=NONE guisp=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
 hi Exception guifg=#d70000 guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
