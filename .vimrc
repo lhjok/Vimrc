@@ -49,27 +49,30 @@ vnoremap <C-X> "+x
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
 inoremap <C-V> <C-R><C-O>+
-nnoremap <M-'> :Termdebug 
-vnoremap <M-'> <ESC>:Termdebug 
-inoremap <M-'> <ESC>:Termdebug 
-nnoremap <M-;> :Termdebug ../target/debug/
-vnoremap <M-;> <ESC>:Termdebug ../target/debug/
-inoremap <M-;> <ESC>:Termdebug ../target/debug/
-nnoremap <M-\> :Run<CR>
-vnoremap <M-\> <ESC>:Run<CR>
-inoremap <M-\> <ESC>:Run<CR>
-nnoremap <M-[> :Break<CR>
-vnoremap <M-[> <ESC>:Break<CR>
-inoremap <M-[> <ESC>:Break<CR>
-nnoremap <M-]> :Clear<CR>
-vnoremap <M-]> <ESC>:Clear<CR>
-inoremap <M-]> <ESC>:Clear<CR>
+nnoremap <C-\> :promptrepl<CR>
+vnoremap <C-\> <ESC>:promptrepl<CR>
+inoremap <C-\> <ESC>:promptrepl<CR>
 nnoremap <C-]> :browse confirm e<CR>
 vnoremap <C-]> <ESC>:browse confirm e<CR>
 inoremap <C-]> <ESC>:browse confirm e<CR>
 nnoremap <C-K> :bwipe<CR>
 vnoremap <C-K> <ESC>:bwipe<CR>
 inoremap <C-K> <ESC>:bwipe<CR>
+nnoremap <M-[> :Step<CR>
+vnoremap <M-[> <ESC>:Step<CR>
+inoremap <M-[> <ESC>:Step<CR>
+nnoremap <M-]> :Over<CR>
+vnoremap <M-]> <ESC>:Over<CR>
+inoremap <M-]> <ESC>:Over<CR>
+nnoremap <M-;> :Break<CR>
+vnoremap <M-;> <ESC>:Break<CR>
+inoremap <M-;> <ESC>:Break<CR>
+nnoremap <M-'> :Clear<CR>
+vnoremap <M-'> <ESC>:Clear<CR>
+inoremap <M-'> <ESC>:Clear<CR>
+nnoremap <M-\> :Run 
+vnoremap <M-\> <ESC>:Run 
+inoremap <M-\> <ESC>:Run 
 nnoremap <M-.> :YcmCompleter GoToDefinition<CR>
 inoremap <M-.> <ESC>:YcmCompleter GoToDefinition<CR>
 nnoremap <M-/> :YcmCompleter GoToDeclaration<CR>
@@ -97,9 +100,9 @@ tnoremap <F3> <C-W><
 nnoremap <F4> <C-W>>
 vnoremap <F4> <C-W>>
 tnoremap <F4> <C-W>>
-nnoremap <F5> :promptrepl<CR>
-vnoremap <F5> <ESC>:promptrepl<CR>
-inoremap <F5> <ESC>:promptrepl<CR>
+nnoremap <F5> :Termdebug ../target/debug/
+vnoremap <F5> <ESC>:Termdebug ../target/debug/
+inoremap <F5> <ESC>:Termdebug ../target/debug/
 nnoremap <F6> :noh<CR>
 vnoremap <F6> <ESC>:noh<CR>
 inoremap <F6> <ESC>:noh<CR>

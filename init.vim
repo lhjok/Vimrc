@@ -36,24 +36,30 @@ vnoremap <C-X> "+x
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
 inoremap <C-V> <C-R><C-O>+
-nnoremap <M-'> :Termdebug 
-vnoremap <M-'> <ESC>:Termdebug 
-inoremap <M-'> <ESC>:Termdebug 
-nnoremap <M-\> :Run<CR>
-vnoremap <M-\> <ESC>:Run<CR>
-inoremap <M-\> <ESC>:Run<CR>
-nnoremap <M-[> :Break<CR>
-vnoremap <M-[> <ESC>:Break<CR>
-inoremap <M-[> <ESC>:Break<CR>
-nnoremap <M-]> :Clear<CR>
-vnoremap <M-]> <ESC>:Clear<CR>
-inoremap <M-]> <ESC>:Clear<CR>
+nnoremap <C-\> :%s/
+vnoremap <C-\> <ESC>:%s/
+inoremap <C-\> <ESC>:%s/
 nnoremap <C-]> :Explore<CR>
 vnoremap <C-]> <ESC>:Explore<CR>
 inoremap <C-]> <ESC>:Explore<CR>
 nnoremap <C-K> :bwipe<CR>
 vnoremap <C-K> <ESC>:bwipe<CR>
 inoremap <C-K> <ESC>:bwipe<CR>
+nnoremap <M-[> :Step<CR>
+vnoremap <M-[> <ESC>:Step<CR>
+inoremap <M-[> <ESC>:Step<CR>
+nnoremap <M-]> :Over<CR>
+vnoremap <M-]> <ESC>:Over<CR>
+inoremap <M-]> <ESC>:Over<CR>
+nnoremap <M-;> :Break<CR>
+vnoremap <M-;> <ESC>:Break<CR>
+inoremap <M-;> <ESC>:Break<CR>
+nnoremap <M-'> :Clear<CR>
+vnoremap <M-'> <ESC>:Clear<CR>
+inoremap <M-'> <ESC>:Clear<CR>
+nnoremap <M-\> :Run 
+vnoremap <M-\> <ESC>:Run 
+inoremap <M-\> <ESC>:Run 
 nnoremap <M-.> :YcmCompleter GoToDefinition<CR>
 inoremap <M-.> <ESC>:YcmCompleter GoToDefinition<CR>
 nnoremap <M-/> :YcmCompleter GoToDeclaration<CR>
@@ -81,9 +87,9 @@ tnoremap <F3> <C-\><C-N>
 nnoremap <F4> <C-W>>
 vnoremap <F4> <C-W>>
 tnoremap <F4> <C-\><C-N>
-nnoremap <F5> :%s/
-vnoremap <F5> <ESC>:%s/
-inoremap <F5> <ESC>:%s/
+nnoremap <F5> :Termdebug ../target/debug/
+vnoremap <F5> <ESC>:Termdebug ../target/debug/
+inoremap <F5> <ESC>:Termdebug ../target/debug/
 nnoremap <F6> :noh<CR>
 vnoremap <F6> <ESC>:noh<CR>
 inoremap <F6> <ESC>:noh<CR>
@@ -118,6 +124,7 @@ colorscheme default
 set background=light
 packadd termdebug
 
+let termdebugger="rust-gdb"
 let g:termdebug_wide=135
 let g:termdebug_use_prompt=1
 let g:rustfmt_autosave=0
