@@ -52,6 +52,9 @@ inoremap <C-V> <C-R><C-O>+
 nnoremap <M-'> :Termdebug 
 vnoremap <M-'> <ESC>:Termdebug 
 inoremap <M-'> <ESC>:Termdebug 
+nnoremap <M-;> :Termdebug ../target/debug/
+vnoremap <M-;> <ESC>:Termdebug ../target/debug/
+inoremap <M-;> <ESC>:Termdebug ../target/debug/
 nnoremap <M-\> :Run<CR>
 vnoremap <M-\> <ESC>:Run<CR>
 inoremap <M-\> <ESC>:Run<CR>
@@ -133,6 +136,7 @@ filetype plugin indent on
 colorscheme default
 set background=light
 
+let termdebugger="rust-gdb"
 let g:termdebug_wide=135
 let g:termdebug_use_prompt=1
 let g:rustfmt_autosave=0
