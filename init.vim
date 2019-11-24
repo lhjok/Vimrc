@@ -39,13 +39,13 @@ inoremap <C-V> <C-R><C-O>+
 nnoremap <C-\> :%s/
 vnoremap <C-\> <ESC>:%s/
 inoremap <C-\> <ESC>:%s/
-nnoremap tt :NERDTreeToggle<CR>
-nnoremap <C-Z> :NERDTreeToggle<CR>
-vnoremap <C-Z> <ESC>:NERDTreeToggle<CR>
-inoremap <C-Z> <ESC>:NERDTreeToggle<CR>
-nnoremap <C-N> :Files ../<CR>
-vnoremap <C-N> <ESC>:Files ../<CR>
-inoremap <C-N> <ESC>:Files ../<CR>
+nnoremap <silent> tt :NERDTreeToggle<CR>
+nnoremap <silent> <C-Z> :NERDTreeToggle<CR>
+vnoremap <silent> <C-Z> <ESC>:NERDTreeToggle<CR>
+inoremap <silent> <C-Z> <ESC>:NERDTreeToggle<CR>
+nnoremap <silent> <C-N> :Files ../<CR>
+vnoremap <silent> <C-N> <ESC>:Files ../<CR>
+inoremap <silent> <C-N> <ESC>:Files ../<CR>
 nnoremap <C-K> :bwipe<CR>
 vnoremap <C-K> <ESC>:bwipe<CR>
 inoremap <C-K> <ESC>:bwipe<CR>
@@ -126,11 +126,15 @@ Plug 'neomake/neomake'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'itchyny/vim-cursorword'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
 call plug#end()
 colorscheme default
 set background=light
 packadd termdebug
 
+let mapleader="z"
 let termdebugger="rust-gdb"
 let g:termdebug_wide=135
 let g:termdebug_use_prompt=1
@@ -153,6 +157,9 @@ let g:fzf_colors={'fg': ['fg', 'Todo'], 'bg': ['bg', 'SignColumn'],
 \'fg+': ['fg', 'Error'], 'bg+': ['bg', 'SignColumn']}
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDSpaceDelims=1
+let g:NERDCustomDelimiters={'rust': {'left': '///'}}
+let g:NERDTrimTrailingWhitespace=1
 
 hi Pmenu guifg=#232323 guibg=#f0f0f0 guisp=NONE gui=NONE ctermfg=232 ctermbg=230 cterm=NONE
 hi PmenuSbar guifg=NONE guibg=#e0e0e0 guisp=NONE gui=NONE ctermfg=NONE ctermbg=255 cterm=NONE

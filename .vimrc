@@ -52,9 +52,13 @@ inoremap <C-V> <C-R><C-O>+
 nnoremap <C-\> :promptrepl<CR>
 vnoremap <C-\> <ESC>:promptrepl<CR>
 inoremap <C-\> <ESC>:promptrepl<CR>
-nnoremap <C-]> :browse confirm e<CR>
-vnoremap <C-]> <ESC>:browse confirm e<CR>
-inoremap <C-]> <ESC>:browse confirm e<CR>
+nnoremap <silent> tt :NERDTreeToggle<CR>
+nnoremap <silent> <C-Z> :NERDTreeToggle<CR>
+vnoremap <silent> <C-Z> <ESC>:NERDTreeToggle<CR>
+inoremap <silent> <C-Z> <ESC>:NERDTreeToggle<CR>
+nnoremap <silent> <C-N> :Files ../<CR>
+vnoremap <silent> <C-N> <ESC>:Files ../<CR>
+inoremap <silent> <C-N> <ESC>:Files ../<CR>
 nnoremap <C-K> :bwipe<CR>
 vnoremap <C-K> <ESC>:bwipe<CR>
 inoremap <C-K> <ESC>:bwipe<CR>
@@ -134,11 +138,18 @@ Plug 'cespare/vim-toml'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Chiel92/vim-autoformat'
 Plug 'neomake/neomake'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'itchyny/vim-cursorword'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
 call plug#end()
 filetype plugin indent on
 colorscheme default
 set background=light
 
+let mapleader="z"
 let termdebugger="rust-gdb"
 let g:termdebug_wide=135
 let g:termdebug_use_prompt=1
@@ -155,6 +166,14 @@ let g:ycm_warning_symbol='>>'
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 let g:neomake_open_list=2
 let g:neomake_rust_cargo_command=['build', '--release']
+let g:fzf_layout={'down': '3new'}
+let g:fzf_colors={'fg': ['fg', 'Todo'], 'bg': ['bg', 'SignColumn'],
+\'fg+': ['fg', 'Error'], 'bg+': ['bg', 'SignColumn']}
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDSpaceDelims=1
+let g:NERDCustomDelimiters={'rust': {'left': '///'}}
+let g:NERDTrimTrailingWhitespace=1
 
 hi Pmenu guifg=#232323 guibg=#f0f0f0 guisp=NONE gui=NONE ctermfg=232 ctermbg=230 cterm=NONE
 hi PmenuSbar guifg=NONE guibg=#e0e0e0 guisp=NONE gui=NONE ctermfg=NONE ctermbg=255 cterm=NONE
