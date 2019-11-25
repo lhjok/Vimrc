@@ -175,43 +175,47 @@ let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.
 let g:neomake_open_list=2
 let g:neomake_rust_cargo_command=['build', '--release']
 let g:fzf_layout={'down': '3new'}
-let g:fzf_colors={'fg': ['fg', 'Todo'], 'bg': ['bg', 'SignColumn'],
-\'fg+': ['fg', 'Error'], 'bg+': ['bg', 'SignColumn']}
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:fzf_colors={'fg': ['fg', 'Todo'], 'bg': ['bg', 'Todo'],
+\'fg+': ['fg', 'Error'], 'bg+': ['bg', 'Error']}
+function! s:fzf_statusline()
+  hi fzf1 guifg=#009900 guibg=#dddddd guisp=NONE gui=BOLD ctermfg=161 ctermbg=251 cterm=NONE
+  hi fzf2 guifg=#bbbb00 guibg=#dddddd guisp=NONE gui=BOLD ctermfg=23 ctermbg=251 cterm=NONE
+  setlocal statusline=%#fzf1#\ >>\ %#fzf2#f%#fzf1#z%#fzf2#f
+endfunction
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
+let g:NERDTreeDirArrowExpandable='▸'
+let g:NERDTreeDirArrowCollapsible='▾'
 let g:NERDSpaceDelims=1
 let g:NERDCustomDelimiters={'rust': {'left': '///'}}
 let g:NERDTrimTrailingWhitespace=1
-let g:gitgutter_git_executable='/usr/bin/git'
-let g:gitgutter_max_signs=800
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_start_word_key='<C-]>'
 let g:multi_cursor_next_key='<C-]>'
 let g:multi_cursor_quit_key='<Esc>'
 
-hi GitGutterAdd guifg=#009900 guibg=#ffffff ctermfg=2 ctermbg=255
-hi GitGutterChange guifg=#bbbb00 guibg=#ffffff ctermfg=3 ctermbg=255
-hi GitGutterDelete guifg=#ff2222 guibg=#ffffff ctermfg=1 ctermbg=255
+hi GitGutterAdd guifg=#009900 guibg=#ffffff guisp=NONE gui=NONE ctermfg=2 ctermbg=255 cterm=NONE
+hi GitGutterChange guifg=#bbbb00 guibg=#ffffff guisp=NONE gui=NONE ctermfg=3 ctermbg=255 cterm=NONE
+hi GitGutterDelete guifg=#ff2222 guibg=#ffffff guisp=NONE gui=NONE ctermfg=1 ctermbg=255 cterm=NONE
 
-hi Pmenu guifg=#232323 guibg=#f0f0f0 ctermfg=232 ctermbg=230
-hi PmenuSbar guifg=NONE guibg=#e0e0e0 ctermfg=NONE ctermbg=255
-hi PmenuSel guifg=#af0000 guibg=#d4d4d4 ctermfg=124 ctermbg=187
-hi PmenuThumb guifg=NONE guibg=#cacaca ctermfg=NONE ctermbg=144
+hi Pmenu guifg=#232323 guibg=#f0f0f0 guisp=NONE gui=NONE ctermfg=232 ctermbg=230 cterm=NONE
+hi PmenuSbar guifg=NONE guibg=#e0e0e0 guisp=NONE gui=NONE ctermfg=NONE ctermbg=255 cterm=NONE
+hi PmenuSel guifg=#af0000 guibg=#d4d4d4 guisp=NONE gui=NONE ctermfg=124 ctermbg=187 cterm=NONE
+hi PmenuThumb guifg=NONE guibg=#cacaca guisp=NONE gui=NONE ctermfg=NONE ctermbg=144 cterm=NONE
 
-hi CursorLine guifg=NONE guibg=#e4e4e4 ctermfg=240 ctermbg=254
-hi Comment guifg=#888888 guibg=NONE ctermfg=249 ctermbg=NONE
+hi CursorLine guifg=NONE guibg=#e4e4e4 guisp=NONE gui=NONE ctermfg=240 ctermbg=254 cterm=NONE
+hi Comment guifg=#888888 guibg=NONE guisp=NONE gui=NONE ctermfg=249 ctermbg=NONE cterm=NONE
 
-hi StatusLine guifg=#eeeeee guibg=#666666 ctermfg=255 ctermbg=244
-hi StatusLineNC guifg=#c6c6c6 guibg=#777777 ctermfg=251 ctermbg=244
-hi StatusLineTerm guifg=#eeeeee guibg=#666666 ctermfg=251 ctermbg=244
-hi StatusLineTermNC guifg=#c6c6c6 guibg=#777777 ctermfg=251 ctermbg=244
-hi VertSplit guifg=#c6c6c6 guibg=#666666 ctermfg=251 ctermbg=244
+hi StatusLine guifg=#666666 guibg=#dddddd guisp=NONE gui=BOLD ctermfg=255 ctermbg=244 cterm=NONE
+hi StatusLineNC guifg=#888888 guibg=#eeeeee guisp=NONE gui=BOLD ctermfg=251 ctermbg=244 cterm=NONE
+hi StatusLineTerm guifg=#666666  guibg=#dddddd guisp=NONE gui=BOLD ctermfg=251 ctermbg=244 cterm=NONE
+hi StatusLineTermNC guifg=#888888 guibg=#eeeeee guisp=NONE gui=BOLD ctermfg=251 ctermbg=244 cterm=NONE
+hi VertSplit guifg=#888888 guibg=#eeeeee guisp=NONE gui=BOLD ctermfg=251 ctermbg=244 cterm=NONE
 
-hi SignColumn guifg=NONE guibg=#ffffff ctermfg=240 ctermbg=255
-hi Error guifg=#ff0000 guibg=#ffffff ctermfg=231 ctermbg=255
-hi Todo guifg=#0000ff guibg=#ffffff ctermfg=231 ctermbg=255
-hi debugPC guifg=NONE guibg=#e4e4e4 ctermfg=240 ctermbg=254
-hi debugBreakpoint guifg=red guibg=#ffffff ctermfg=231 ctermbg=255
-hi ErrorMsg guifg=#af0000 guibg=NONE ctermfg=124 ctermbg=NONE
-hi WarningMsg guifg=#ff5f00 guibg=NONE ctermfg=202 ctermbg=NONE
-hi Exception guifg=#d70000 guibg=NONE ctermfg=160 ctermbg=NONE
+hi SignColumn guifg=NONE guibg=#ffffff guisp=NONE gui=NONE ctermfg=240 ctermbg=255 cterm=NONE
+hi Error guifg=#ff0000 guibg=#ffffff guisp=NONE gui=BOLD ctermfg=231 ctermbg=255 cterm=NONE
+hi Todo guifg=#0000ff guibg=#ffffff guisp=NONE gui=BOLD ctermfg=231 ctermbg=255 cterm=NONE
+hi debugPC guifg=NONE guibg=#e4e4e4 guisp=NONE gui=NONE ctermfg=240 ctermbg=254 cterm=NONE
+hi debugBreakpoint guifg=red guibg=#ffffff guisp=NONE gui=BOLD ctermfg=231 ctermbg=255 cterm=NONE
+hi ErrorMsg guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE
+hi WarningMsg guifg=#ff5f00 guibg=NONE guisp=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
+hi Exception guifg=#d70000 guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
