@@ -130,6 +130,9 @@ tnoremap <ScrollWheelUp> <C-W>N
 nnoremap <F12> :rightbelow vert term<CR>
 vnoremap <F12> <ESC>:rightbelow vert term<CR>
 inoremap <F12> <ESC>:rightbelow vert term<CR>
+nmap gh <Plug>(GitGutterPreviewHunk)
+vmap v <Plug>(expand_region_expand)
+vmap V <Plug>(expand_region_shrink)
 
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
@@ -144,10 +147,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/vim-cursorword'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-expand-region'
 call plug#end()
 filetype plugin indent on
 colorscheme default
 set background=light
+set updatetime=100
 
 let mapleader="z"
 let termdebugger="rust-gdb"
@@ -174,26 +182,36 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDSpaceDelims=1
 let g:NERDCustomDelimiters={'rust': {'left': '///'}}
 let g:NERDTrimTrailingWhitespace=1
+let g:gitgutter_git_executable='/usr/bin/git'
+let g:gitgutter_max_signs=800
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_word_key='<C-]>'
+let g:multi_cursor_next_key='<C-]>'
+let g:multi_cursor_quit_key='<Esc>'
 
-hi Pmenu guifg=#232323 guibg=#f0f0f0 guisp=NONE gui=NONE ctermfg=232 ctermbg=230 cterm=NONE
-hi PmenuSbar guifg=NONE guibg=#e0e0e0 guisp=NONE gui=NONE ctermfg=NONE ctermbg=255 cterm=NONE
-hi PmenuSel guifg=#af0000 guibg=#d4d4d4 guisp=NONE gui=NONE ctermfg=124 ctermbg=187 cterm=NONE
-hi PmenuThumb guifg=NONE guibg=#cacaca guisp=NONE gui=NONE ctermfg=NONE ctermbg=144 cterm=NONE
+hi GitGutterAdd guifg=#009900 guibg=#ffffff ctermfg=2 ctermbg=255
+hi GitGutterChange guifg=#bbbb00 guibg=#ffffff ctermfg=3 ctermbg=255
+hi GitGutterDelete guifg=#ff2222 guibg=#ffffff ctermfg=1 ctermbg=255
 
-hi CursorLine guifg=NONE guibg=#e4e4e4 guisp=NONE gui=NONE ctermfg=240 ctermbg=254 cterm=NONE
-hi Comment guifg=#888888 guibg=NONE guisp=NONE gui=NONE ctermfg=249 ctermbg=NONE cterm=NONE
+hi Pmenu guifg=#232323 guibg=#f0f0f0 ctermfg=232 ctermbg=230
+hi PmenuSbar guifg=NONE guibg=#e0e0e0 ctermfg=NONE ctermbg=255
+hi PmenuSel guifg=#af0000 guibg=#d4d4d4 ctermfg=124 ctermbg=187
+hi PmenuThumb guifg=NONE guibg=#cacaca ctermfg=NONE ctermbg=144
 
-hi StatusLine guifg=#eeeeee guibg=#666666 guisp=NONE gui=NONE ctermfg=255 ctermbg=244 cterm=NONE
-hi StatusLineNC guifg=#c6c6c6 guibg=#777777 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 cterm=NONE
-hi StatusLineTerm guifg=#eeeeee  guibg=#666666 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 cterm=NONE
-hi StatusLineTermNC guifg=#c6c6c6 guibg=#777777 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 term=NONE
-hi VertSplit guifg=#c6c6c6 guibg=#666666 guisp=NONE gui=NONE ctermfg=251 ctermbg=244 term=NONE
+hi CursorLine guifg=NONE guibg=#e4e4e4 ctermfg=240 ctermbg=254
+hi Comment guifg=#888888 guibg=NONE ctermfg=249 ctermbg=NONE
 
-hi SignColumn guifg=NONE guibg=#ffffff guisp=NONE gui=NONE ctermfg=240 ctermbg=254 cterm=NONE
-hi Error guifg=#ff0000 guibg=#ffffff guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
-hi Todo guifg=#0000ff guibg=#ffffff guisp=NONE gui=NONE ctermfg=231 ctermbg=124 cterm=NONE
-hi debugPC guifg=NONE guibg=#e4e4e4 guisp=NONE gui=NONE ctermfg=240 ctermbg=254 term=NONE
-hi debugBreakpoint guifg=red guibg=#ffffff guisp=NONE gui=NONE ctermfg=red ctermbg=NONE term=NONE
-hi ErrorMsg guifg=#af0000 guibg=NONE guisp=NONE gui=NONE ctermfg=124 ctermbg=NONE cterm=NONE
-hi WarningMsg guifg=#ff5f00 guibg=NONE guisp=NONE gui=NONE ctermfg=202 ctermbg=NONE cterm=NONE
-hi Exception guifg=#d70000 guibg=NONE guisp=NONE gui=NONE ctermfg=160 ctermbg=NONE cterm=NONE
+hi StatusLine guifg=#eeeeee guibg=#666666 ctermfg=255 ctermbg=244
+hi StatusLineNC guifg=#c6c6c6 guibg=#777777 ctermfg=251 ctermbg=244
+hi StatusLineTerm guifg=#eeeeee guibg=#666666 ctermfg=251 ctermbg=244
+hi StatusLineTermNC guifg=#c6c6c6 guibg=#777777 ctermfg=251 ctermbg=244
+hi VertSplit guifg=#c6c6c6 guibg=#666666 ctermfg=251 ctermbg=244
+
+hi SignColumn guifg=NONE guibg=#ffffff ctermfg=240 ctermbg=255
+hi Error guifg=#ff0000 guibg=#ffffff ctermfg=231 ctermbg=255
+hi Todo guifg=#0000ff guibg=#ffffff ctermfg=231 ctermbg=255
+hi debugPC guifg=NONE guibg=#e4e4e4 ctermfg=240 ctermbg=254
+hi debugBreakpoint guifg=red guibg=#ffffff ctermfg=231 ctermbg=255
+hi ErrorMsg guifg=#af0000 guibg=NONE ctermfg=124 ctermbg=NONE
+hi WarningMsg guifg=#ff5f00 guibg=NONE ctermfg=202 ctermbg=NONE
+hi Exception guifg=#d70000 guibg=NONE ctermfg=160 ctermbg=NONE
