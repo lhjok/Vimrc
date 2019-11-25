@@ -193,7 +193,7 @@ hi Comment guifg=#888888 guibg=NONE guisp=NONE gui=NONE ctermfg=249 ctermbg=NONE
 
 hi StatusLine guifg=#666666 guibg=#dddddd guisp=NONE gui=BOLD ctermfg=255 ctermbg=244 cterm=NONE
 hi StatusLineNC guifg=#888888 guibg=#eeeeee guisp=NONE gui=BOLD ctermfg=251 ctermbg=244 cterm=NONE
-hi StatusLineTerm guifg=#666666  guibg=#dddddd guisp=NONE gui=BOLD ctermfg=251 ctermbg=244 cterm=NONE
+hi StatusLineTerm guifg=#666666 guibg=#dddddd guisp=NONE gui=BOLD ctermfg=251 ctermbg=244 cterm=NONE
 hi StatusLineTermNC guifg=#888888 guibg=#eeeeee guisp=NONE gui=BOLD ctermfg=251 ctermbg=244 cterm=NONE
 hi VertSplit guifg=#888888 guibg=#eeeeee guisp=NONE gui=BOLD ctermfg=251 ctermbg=244 cterm=NONE
 
