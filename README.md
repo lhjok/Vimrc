@@ -21,7 +21,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 #### Neovim
 
 ```sh
-npm install -g neovim
+mkdir ~/.config/nvim    //把init.vim文件放在这。
 ```
 
 ```sh
