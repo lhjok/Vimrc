@@ -39,10 +39,10 @@ inoremap <C-V> <C-R><C-O>+
 nnoremap <C-\> :%s/
 vnoremap <C-\> <ESC>:%s/
 inoremap <C-\> <ESC>:%s/
+nnoremap <C-Z> u
+vnoremap <C-Z> <ESC>u
+inoremap <C-Z> <ESC>u
 nnoremap <silent> tt :NERDTreeToggle<CR>
-nnoremap <silent> <C-Z> :NERDTreeToggle<CR>
-vnoremap <silent> <C-Z> <ESC>:NERDTreeToggle<CR>
-inoremap <silent> <C-Z> <ESC>:NERDTreeToggle<CR>
 nnoremap <silent> <C-N> :Files ../<CR>
 vnoremap <silent> <C-N> <ESC>:Files ../<CR>
 inoremap <silent> <C-N> <ESC>:Files ../<CR>
@@ -136,6 +136,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-expand-region'
+Plug 'fatih/vim-go',{'do':':GoUpdateBinaries'}
 call plug#end()
 colorscheme default
 set background=light

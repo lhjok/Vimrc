@@ -49,13 +49,13 @@ vnoremap <C-X> "+x
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
 inoremap <C-V> <C-R><C-O>+
+nnoremap <C-Z> u
+vnoremap <C-Z> <ESC>u
+inoremap <C-Z> <ESC>u
 nnoremap <C-\> :promptrepl<CR>
 vnoremap <C-\> <ESC>:promptrepl<CR>
 inoremap <C-\> <ESC>:promptrepl<CR>
 nnoremap <silent> tt :NERDTreeToggle<CR>
-nnoremap <silent> <C-Z> :NERDTreeToggle<CR>
-vnoremap <silent> <C-Z> <ESC>:NERDTreeToggle<CR>
-inoremap <silent> <C-Z> <ESC>:NERDTreeToggle<CR>
 nnoremap <silent> <C-N> :Files ../<CR>
 vnoremap <silent> <C-N> <ESC>:Files ../<CR>
 inoremap <silent> <C-N> <ESC>:Files ../<CR>
@@ -151,6 +151,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-expand-region'
+Plug 'fatih/vim-go',{'do':':GoUpdateBinaries'}
 call plug#end()
 filetype plugin indent on
 colorscheme default
