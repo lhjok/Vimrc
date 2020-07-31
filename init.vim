@@ -137,6 +137,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-expand-region'
 Plug 'fatih/vim-go',{'do':':GoUpdateBinaries'}
+Plug 'posva/vim-vue'
+Plug 'JulesWang/css.vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
 call plug#end()
 colorscheme default
 set background=light
@@ -179,6 +184,7 @@ let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_start_word_key='<C-]>'
 let g:multi_cursor_next_key='<C-]>'
 let g:multi_cursor_quit_key='<Esc>'
+let g:vue_pre_processors=['pug','scss']
 
 hi GitGutterAdd guifg=#009900 guibg=#ffffff guisp=NONE gui=NONE ctermfg=2 ctermbg=255 cterm=NONE
 hi GitGutterChange guifg=#bbbb00 guibg=#ffffff guisp=NONE gui=NONE ctermfg=3 ctermbg=255 cterm=NONE
