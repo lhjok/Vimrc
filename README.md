@@ -47,12 +47,6 @@ call plug#end()
 
 #### 编译YCM自动补全插件。
 
-- 安装编译环境。
-
-```sh
-sudo apt install build-essential cmake python-dev
-```
-
 - 开始编译YCM插件`GO模块需要翻墙`。
 
 ```sh
